@@ -9,7 +9,7 @@ public class VyTrack_Utilities {
         //WE HAVE TO CREATE OUR CUSTOM LOGIN METHOD FOR THIS PROJECT!
 
     /*
-    public static void crm_login(WebDriver driver) {
+    public static void vy_track_login(WebDriver driver) {
         //3. Enter valid username
         WebElement inputUsername = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
         inputUsername.sendKeys("helpdesk1@cybertekschool.com");
