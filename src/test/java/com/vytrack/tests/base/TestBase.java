@@ -1,4 +1,4 @@
-package com.vytrack.tests.Base;
+package com.vytrack.tests.base;
 
 import com.vytrack.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
