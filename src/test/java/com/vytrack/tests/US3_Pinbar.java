@@ -35,6 +35,14 @@ public class US3_Pinbar {
 
        learnHowToBar.click();
 
+       WebElement PinBar = driver.findElement(By.xpath("//*[@id=\"bookmark-buttons\"]/div/div/button[2]"));
+
+       PinBar.click();
+
+       verify = driver.findElement(By.xpath("//*[@id=\"pinbar\"]/div[1]/ul/li/a"));
+
+       verify.isDisplayed();
+
     }
 
 }
