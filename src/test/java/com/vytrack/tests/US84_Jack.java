@@ -5,6 +5,7 @@ import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import com.vytrack.utilities.VyTrack_Utilities;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -46,16 +47,34 @@ public class US84_Jack {
         repeat.click();
 
         //Error Message Less Than 1.
+        WebElement repeatEvery1 = Driver.getDriver().findElement(By.xpath("//input[@name='temp-validation-name-266']"));
+        repeatEvery1.sendKeys("0" + Keys.ENTER);
         WebElement ValueLessThan1 = Driver.getDriver().findElement(By.xpath("//span//span[.='The value have not to be less than 1.']/span"));
         String actualErrorMessage1 = ValueLessThan1.getText();
         String expectedErrorMessage1 = "The value have not to be less than 1.";
         Assert.assertEquals(actualErrorMessage1, expectedErrorMessage1);
 
         //Error Message More Than 99.
+        WebElement repeatEvery99 = Driver.getDriver().findElement(By.xpath("//input[@name='temp-validation-name-266']"));
+        repeatEvery99.sendKeys("100" + Keys.ENTER);
         WebElement ValueMoreThan99 = Driver.getDriver().findElement(By.xpath("//span//span[.='The value have not to be more than 99.']/span"));
         String actualErrorMessage99 = ValueLessThan1.getText();
         String expectedErrorMessage99 = "The value have not to be more than 99.";
         Assert.assertEquals(actualErrorMessage99, expectedErrorMessage99);
+
+    }
+
+    @Test
+    public void verifying_errorMessage_salesManager() {
+        VyTrack_Utilities.loginAsSalesManager();
+
+
+
+    }
+
+    @Test
+    public void verifying_errorMessage_storeManager() {
+        VyTrack_Utilities.loginAsStoreManger();
 
     }
 }
