@@ -87,11 +87,14 @@ public class US84_Jack {
         repeat.click();
 
         //Error Message Less Than 1.
+
+        //not ready
         WebElement ValueLessThan1 = Driver.getDriver().findElement(By.xpath("//span//span[.='The value have not to be less than 1.']/span"));
         String actualErrorMessage1 = ValueLessThan1.getText();
         String expectedErrorMessage1 = "The value have not to be less than 1.";
         Assert.assertEquals(actualErrorMessage1, expectedErrorMessage1);
 
+        //not ready
         //Error Message More Than 99.
         WebElement ValueMoreThan99 = Driver.getDriver().findElement(By.xpath("//span//span[.='The value have not to be more than 99.']/span"));
         String actualErrorMessage99 = ValueLessThan1.getText();
