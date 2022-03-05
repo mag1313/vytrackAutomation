@@ -1,26 +1,21 @@
 package com.vytrack.tests.base;
 
-import com.vytrack.utilities.WebDriverFactory;
-import org.openqa.selenium.WebDriver;
+import com.vytrack.utilities.ConfigurationReader;
+import com.vytrack.utilities.Driver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import java.util.concurrent.TimeUnit;
 
 public abstract class TestBase {
-    public WebDriver driver;
 
     @BeforeMethod
     public void setUpMethod() {
-
-        driver = WebDriverFactory.getDriver("chrome");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
+        Driver.getDriver().get(ConfigurationReader.getProperty("env2"));
     }
 
     @AfterMethod
     public void tearDown() {
-        driver.close();
+        Driver.closeDriver();
     }
+
 }
