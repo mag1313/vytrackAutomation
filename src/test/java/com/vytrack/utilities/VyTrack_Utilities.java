@@ -1,40 +1,36 @@
 package com.vytrack.utilities;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class VyTrack_Utilities {
 
-        //WE HAVE TO CREATE OUR CUSTOM LOGIN METHOD FOR THIS PROJECT!
+    public static void login(String username, String password) {
 
-    /*
-    public static void vy_track_login(WebDriver driver) {
-        //3. Enter valid username
-        WebElement inputUsername = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
-        inputUsername.sendKeys("helpdesk1@cybertekschool.com");
-
-        //4. Enter valid password
-        WebElement inputPassword = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
-        inputPassword.sendKeys("UserUser");
-        //5. Click to Log In button
-        WebElement loginButton = driver.findElement(By.xpath("//input[@value='Log In']"));
-        loginButton.click();
+        Driver.getDriver().get(ConfigurationReader.getProperty("env2"));
+        Driver.getDriver().findElement(By.id("prependedInput")).sendKeys(username);
+        Driver.getDriver().findElement(By.cssSelector("#prependedInput")).sendKeys(password);
+        Driver.getDriver().findElement(By.tagName("button")).click();
 
     }
 
-    public static void crm_login(WebDriver driver, String username, String password) {
-        //3. Enter valid username
-        WebElement inputUsername = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
-        inputUsername.sendKeys(username);
+    public static void loginAsDriver() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("env2"));
+        Driver.getDriver().findElement(By.id("prependedInput")).sendKeys(ConfigurationReader.getProperty("driver_username"));
+        Driver.getDriver().findElement(By.cssSelector("#prependedInput")).sendKeys(ConfigurationReader.getProperty("password"));
+        Driver.getDriver().findElement(By.tagName("button")).click();
+    }
 
-        //4. Enter valid password
-        WebElement inputPassword = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
-        inputPassword.sendKeys(password);
-        //5. Click to Log In button
-        WebElement loginButton = driver.findElement(By.xpath("//input[@value='Log In']"));
-        loginButton.click();
+    public static void loginAsStoreManager() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("env2"));
+        Driver.getDriver().findElement(By.id("prependedInput")).sendKeys(ConfigurationReader.getProperty("store_manager"));
+        Driver.getDriver().findElement(By.cssSelector("#prependedInput")).sendKeys(ConfigurationReader.getProperty("password"));
+        Driver.getDriver().findElement(By.tagName("button")).click();
+    }
 
+    public static void loginAsSalesManager() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("env2"));
+        Driver.getDriver().findElement(By.id("prependedInput")).sendKeys(ConfigurationReader.getProperty("sales_manager"));
+        Driver.getDriver().findElement(By.cssSelector("#prependedInput")).sendKeys(ConfigurationReader.getProperty("password"));
+        Driver.getDriver().findElement(By.tagName("button")).click();
+    }
 
-     */
 }
