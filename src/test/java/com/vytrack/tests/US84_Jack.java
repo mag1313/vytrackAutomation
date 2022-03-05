@@ -81,10 +81,6 @@ public class US84_Jack {
         //Performing the mouse hover action on the target element.
         actions.moveToElement(activities).perform();
 
-        //Step2 Click on Calendar Events
-        WebElement calendarEvents = Driver.getDriver().findElement(By.xpath("//*[@id=\"main-menu\"]/ul/li[5]/div/div/ul/li[7]/a/span"));
-        actions.moveToElement(calendarEvents);
-        actions.click();
 
 
 
