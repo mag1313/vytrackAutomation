@@ -13,11 +13,8 @@ import org.testng.annotations.Test;
 
 import static com.vytrack.utilities.utilities_for_login.driver;
 
-public class US84_Jack {
+public class US84_Jack extends TestBase {
 
-    public class US84 extends TestBase {
-
-    }
 
     @Test
     public void verifying_errorMessage_driver() {
@@ -80,12 +77,6 @@ public class US84_Jack {
         //Step1 = Login Hover Over the "Activities" -> click on "Calendar Events"
         //Performing the mouse hover action on the target element.
         actions.moveToElement(activities).perform();
-
-        //Step2 Click on Calendar Events
-        WebElement calendarEvents = Driver.getDriver().findElement(By.xpath("//*[@id=\"main-menu\"]/ul/li[5]/div/div/ul/li[7]/a/span"));
-        actions.moveToElement(calendarEvents);
-        actions.click();
-
 
 
     }
