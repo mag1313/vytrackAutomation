@@ -15,7 +15,6 @@ import static com.vytrack.utilities.utilities_for_login.driver;
 
 public class US84_Jack extends TestBase {
 
-
     @Test
     public void verifying_errorMessage_driver() {
         VyTrack_Utilities.loginAsDriver();
@@ -94,4 +93,5 @@ public class US84_Jack extends TestBase {
         actions.moveToElement(activities).perform();
 
     }
+
 }

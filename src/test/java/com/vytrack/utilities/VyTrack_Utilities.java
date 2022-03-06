@@ -2,7 +2,6 @@ package com.vytrack.utilities;
 import org.openqa.selenium.By;
 
 public class VyTrack_Utilities {
-
     public static void login(String username, String password) {
         //go to website
         Driver.getDriver().get(ConfigurationReader.getProperty("env1"));
@@ -52,6 +51,8 @@ public class VyTrack_Utilities {
         Driver.getDriver().findElement(By.tagName("button")).click();
     }
 
+    }
 
 
-}
+
+
