@@ -8,8 +8,8 @@ import org.testng.annotations.BeforeMethod;
 public abstract class TestBase {
 
     @BeforeMethod
-    public void setUpMethod() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("env2"));
+    public void setUp() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("env1"));
     }
 
     @AfterMethod
