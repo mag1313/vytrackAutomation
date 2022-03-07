@@ -1,58 +1,48 @@
 package com.vytrack.utilities;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class VyTrack_Utilities {
-    public static void login(String username, String password) {
-        //go to website
-        Driver.getDriver().get(ConfigurationReader.getProperty("env1"));
-        // pass username
-        // Driver.getDriver().findElement(By.cssSelector("#prependedInput"));
-        Driver.getDriver().findElement(By.id("prependedInput")).sendKeys(username);
-        //pass password
-        Driver.getDriver().findElement(By.cssSelector("#prependedInput2")).sendKeys(password);
-        //click login button
-        Driver.getDriver().findElement(By.tagName("button")).click();
+
+        //WE HAVE TO CREATE OUR CUSTOM LOGIN METHOD FOR THIS PROJECT!
+
+
+    public static void crm_login(WebDriver driver) {
+        //3. Enter valid username
+        WebElement inputUsername = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
+        inputUsername.sendKeys("helpdesk1@cybertekschool.com");
+
+        //4. Enter valid password
+        WebElement inputPassword = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
+        inputPassword.sendKeys("UserUser");
+        //5. Click to Log In button
+        WebElement loginButton = driver.findElement(By.xpath("//input[@value='Log In']"));
+        loginButton.click();
 
     }
 
-    public static void loginAsDriver() {
-        //go to website
-        Driver.getDriver().get(ConfigurationReader.getProperty("env1"));
-        // pass username
-        // Driver.getDriver().findElement(By.cssSelector("#prependedInput"));
-        Driver.getDriver().findElement(By.id("prependedInput")).sendKeys(ConfigurationReader.getProperty("driver_username"));
-        //pass password
-        Driver.getDriver().findElement(By.cssSelector("#prependedInput2")).sendKeys(ConfigurationReader.getProperty("driver_password"));
-        //click login button
-        Driver.getDriver().findElement(By.tagName("button")).click();
-    }
+    public static void crm_login(WebDriver driver, String username, String password) {
+        //3. Enter valid username
+        WebElement inputUsername = driver.findElement(By.xpath("//input[@id='prependedInput']"));
+        inputUsername.sendKeys(username);
 
-    public static void loginAsStoreManger() {
-        //go to website
-        Driver.getDriver().get(ConfigurationReader.getProperty("env1"));
-        // pass username
-        // Driver.getDriver().findElement(By.cssSelector("#prependedInput"));
-        Driver.getDriver().findElement(By.id("prependedInput")).sendKeys(ConfigurationReader.getProperty("store_manager_username"));
-        //pass password
-        Driver.getDriver().findElement(By.cssSelector("#prependedInput2")).sendKeys(ConfigurationReader.getProperty("store_manager_password"));
-        //click login button
-        Driver.getDriver().findElement(By.tagName("button")).click();
-    }
+        //4. Enter valid password
+        WebElement inputPassword = driver.findElement(By.xpath("//input[@id='prependedInput2']"));
+        inputPassword.sendKeys(password);
+        //5. Click to Log In button
+        WebElement loginButton = driver.findElement(By.xpath("//button[@id='_submit']"));
+        loginButton.click();
 
-    public static void loginAsSalesManager() {
-        //go to website
-        Driver.getDriver().get(ConfigurationReader.getProperty("env1"));
-        // pass username
-        // Driver.getDriver().findElement(By.cssSelector("#prependedInput"));
-        Driver.getDriver().findElement(By.id("prependedInput")).sendKeys(ConfigurationReader.getProperty("sales_manager_username"));
-        //pass password
-        Driver.getDriver().findElement(By.cssSelector("#prependedInput2")).sendKeys(ConfigurationReader.getProperty("sales_manager_password"));
-        //click login button
-        Driver.getDriver().findElement(By.tagName("button")).click();
-    }
 
     }
 
-
-
-
+    public static void sleep(double second){
+        try {
+            Thread.sleep((long) (second*1000));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
