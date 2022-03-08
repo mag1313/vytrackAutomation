@@ -106,7 +106,7 @@ public class US84_Jack extends TestBase {
         repeat.click();
 
         //Error Message Less Than 1.
-        WebElement inputBox1 = Driver.getDriver().findElement(By.xpath("//input[@name='temp-validation-name-454']"));
+        WebElement inputBox1 = Driver.getDriver().findElement(By.xpath("//form/input[@type='text']"));
         inputBox1.sendKeys("0" + Keys.ENTER);
         WebElement ValueLessThan1 = Driver.getDriver().findElement(By.xpath("//span//span[.='The value have not to be less than 1.']/span"));
 
