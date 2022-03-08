@@ -88,9 +88,12 @@ public class US84_Jack extends TestBase {
         WebElement activities = Driver.getDriver().findElement(By.xpath("//*[@id=\"main-menu\"]/ul/li[5]/a/span"));
         Actions actions = new Actions(Driver.getDriver());
 
+
         //Step1 = Login Hover Over the "Activities" -> click on "Calendar Events"
         //Performing the mouse hover action on the target element.
         actions.moveToElement(activities).perform();
+        WebElement calendarEvent = Driver.getDriver().findElement(By.xpath("//*[@id=\"main-menu\"]/ul/li[5]/div/div/ul/li[4]/a/span"));
+        calendarEvent.click();
 
     }
 
