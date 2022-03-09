@@ -16,7 +16,7 @@ import static com.vytrack.utilities.utilities_for_login.driver;
 
 public class US84_Jack extends TestBase {
 
-    @Test
+    @Test //DONE!
     public void verifying_errorMessage_driver() {
         VyTrack_Utilities.loginAsDriver();
 
@@ -38,7 +38,7 @@ public class US84_Jack extends TestBase {
 
         //3. Check the "Repeat" checkBox
         //Repeat checkBox
-        WebElement repeat = Driver.getDriver().findElement(By.xpath("//*[@id='recurrence-repeat-view243']"));
+        WebElement repeat = Driver.getDriver().findElement(By.xpath("//*[@id='recurrence-repeat-view242']"));
         repeat.click();
 
         //Error Message Less Than 1.
@@ -68,7 +68,7 @@ public class US84_Jack extends TestBase {
 
     }
 
-    @Test //DONE
+    @Test //DONE!
     public void verifying_errorMessage_salesManager() {
         VyTrack_Utilities.loginAsSalesManager();
 
