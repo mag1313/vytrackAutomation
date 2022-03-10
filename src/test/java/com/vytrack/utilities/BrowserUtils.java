@@ -37,7 +37,7 @@ public class BrowserUtils {
 
             System.out.println("Current URL: " + driver.getCurrentUrl());
 
-            if (driver.getCurrentUrl().contains(expectedInUrl)){
+            if (Driver.getDriver().getCurrentUrl().contains(expectedInUrl)){
                 break;
             }
         }
@@ -51,7 +51,7 @@ public class BrowserUtils {
     This method accepts a String "expectedTitle" and Asserts if it is true
      */
 
-    public static void verifyTitle(WebDriver driver ,String expectedTitle){
-        Assert.assertEquals(driver.getTitle(), expectedTitle);
+    public static void verifyTitle(String expectedTitle){
+        Assert.assertEquals(Driver.getDriver().getTitle(), expectedTitle);
     }
 }
