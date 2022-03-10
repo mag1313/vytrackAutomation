@@ -12,8 +12,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-import static com.vytrack.utilities.utilities_for_login.driver;
-
 public class US84_Jack extends TestBase {
 
     @Test //DONE!
