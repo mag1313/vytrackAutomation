@@ -11,7 +11,8 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import static com.vytrack.utilities.VyTrack_Utilities.crm_login;
+
+import static com.vytrack.utilities.VyTrack_Utilities.login;
 import static com.vytrack.utilities.utilities_for_login.*;
 
 public class US_06_81 {
@@ -23,8 +24,8 @@ public class US_06_81 {
     public void verifyUser() {
         for (String username : userList) {
             Driver.getDriver();
-            Driver.openUrl("https://qa1.vytrack.com/user/login");
-            crm_login(Driver.getDriver(), username, password);
+            Driver.getDriver().get("https://qa1.vytrack.com/user/login");
+            login( username, password);
             Driver.getDriver().findElement(By.xpath("//div[@id]/ul/li[1]/a/span")).click();
             Driver.getDriver().findElement(By.xpath("//span[.='Vehicles']")).click();
             List<WebElement> links = Driver.getDriver().findElements(By.xpath("//tr/td[20]/div/div/a"));
@@ -38,7 +39,7 @@ public class US_06_81 {
                     System.out.println(count+":-"+eachDot.getAttribute("title"));
                 }
             Assert.assertEquals((links.size()* expectedDotText.size()),dots.size());
-            Driver.close();
+            Driver.closeDriver();
                 }
             }
 
@@ -49,8 +50,8 @@ public class US_06_81 {
     public void verifySalesManager() {
         for (String username : salesmanager) {
             Driver.getDriver();
-            Driver.openUrl("https://qa1.vytrack.com/user/login");
-            crm_login(Driver.getDriver(), username, password);
+            Driver.getDriver().get("https://qa1.vytrack.com/user/login");
+            login( username, password);
 
             try{
                Driver.getDriver().findElement(By.xpath("//*[@id=\"main-menu\"]/ul/li[2]")).click();
@@ -70,7 +71,7 @@ public class US_06_81 {
                 System.out.println(count+":-"+eachDot.getAttribute("title"));
             }
             Assert.assertEquals((links.size()* expectedDotText.size()),dots.size());
-            Driver.close();
+            Driver.closeDriver();
         }
     }
 
@@ -78,8 +79,8 @@ public class US_06_81 {
     public void verifyStoreManager() {
         for (String username : storemanger) {
             Driver.getDriver();
-            Driver.openUrl("https://qa1.vytrack.com/user/login");
-            crm_login(Driver.getDriver(), username, password);
+            Driver.getDriver().get("https://qa1.vytrack.com/user/login");
+            login( username, password);
             try{
                 Driver.getDriver().findElement(By.xpath("//*[@id]/ul/li[2]/a/span")).click();
             }catch (ElementClickInterceptedException e){
@@ -99,7 +100,7 @@ public class US_06_81 {
                 System.out.println(count+":-"+eachDot.getAttribute("title"));
             }
             Assert.assertEquals((links.size()* expectedDotText.size()),dots.size());
-            Driver.close();
+            Driver.closeDriver();
         }
     }
 }
