@@ -43,9 +43,6 @@ public class US_06_81 {
                 }
             }
 
-
-
-
     @Test
     public void verifySalesManager() {
         for (String username : salesmanager) {
