@@ -2,7 +2,9 @@ package com.vytrack.tests;
 
 import com.vytrack.utilities.Driver;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -28,17 +30,26 @@ public class US_06_81 {
             login( username, password);
             Driver.getDriver().findElement(By.xpath("//div[@id]/ul/li[1]/a/span")).click();
             Driver.getDriver().findElement(By.xpath("//span[.='Vehicles']")).click();
-            List<WebElement> links = Driver.getDriver().findElements(By.xpath("//tr/td[20]/div/div/a"));
-            for (WebElement driver : links) {
-            driver.click();
+            List<WebElement> links = Driver.getDriver().findElements(By.xpath("//td[@class='action-cell grid-cell grid-body-cell']"));
+            //List<WebElement> dots=Driver.getDriver().findElements(By.xpath("//tr//div[@class='more-bar-holder']/div"));
+            Wait wait = new WebDriverWait(Driver.getDriver(),5);//tr//td[21]
+
+            for (int i = 0; i < links.size(); i++) {
+            Actions actions = new Actions(Driver.getDriver());
+            wait.until(ExpectedConditions.visibilityOfAllElements(links));
+            //actions.moveToElement(links.get(i)).click().perform();
+            links.get(i).click();
+
             }
-            int count=0;
+
+           int count=0;
            List<WebElement> dots=Driver.getDriver().findElements(By.xpath("//*[@id]/div/div//div/div/ul/li/ul/li/a"));
-                for (WebElement eachDot : dots) {
-                    count++;
-                    System.out.println(count+":-"+eachDot.getAttribute("title"));
-                }
-            Assert.assertEquals((links.size()* expectedDotText.size()),dots.size());
+           for (WebElement eachDot : dots) {
+           count++;
+           System.out.println(count+":-"+eachDot.getAttribute("title"));
+           }
+            System.out.println(dots.size());
+
             Driver.closeDriver();
                 }
             }
