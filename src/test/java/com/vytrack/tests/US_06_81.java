@@ -43,7 +43,8 @@ public class US_06_81 {
             }
 
            int count=0;
-           List<WebElement> dots=Driver.getDriver().findElements(By.xpath("//*[@id]/div/div//div/div/ul/li/ul/li/a"));
+           List<WebElement> dots=Driver.getDriver().findElements(By.xpath("" +
+                   "a"));
            for (WebElement eachDot : dots) {
            count++;
            System.out.println(count+":-"+eachDot.getAttribute("title"));
