@@ -116,4 +116,43 @@ public class US88_Daria extends TestBase {
 
 
     }
+
+
+    @Test   // tc2 storeManager practice
+    public void tc2_verify_checkbox_visible_for_store_manager(){
+
+        VyTrack_Utilities.loginAsStoreManger();
+
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5);
+        wait.until(ExpectedConditions.titleIs("Dashboard"));
+
+        Actions actions = new Actions(Driver.getDriver());
+
+        //user go to Fleet tab
+        WebElement fleetTab = Driver.getDriver().findElement(By.xpath("//span[normalize-space()='Fleet' and contains(@class, 'title title-level-1')]"));
+        actions.moveToElement(fleetTab).perform();
+
+        //user click Vehicle Cost
+        WebElement vehicleCost = Driver.getDriver().findElement(By.xpath("//span[.='Vehicle Costs']"));
+        vehicleCost.click();
+
+        wait.until(ExpectedConditions.titleContains("Vehicle Costs"));
+
+        // click the first checkbox
+        Driver.getDriver().findElement(By.xpath("//button[@data-toggle='dropdown']//input")).click();
+
+        //Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//button[@data-toggle='dropdown']//input")).isSelected());
+
+        List<WebElement> allCheckBox = Driver.getDriver().findElements(By.xpath("//td[@data-column-label='Selected Rows']//input[@type='checkbox']"));
+
+        //verify all checkbox selected
+        allCheckBox.forEach(p->Assert.assertTrue( p.isSelected() ));
+
+
+      /*  deselect all
+      Driver.getDriver().findElement(By.xpath("//button[@data-toggle='dropdown']//input")).click();
+      allCheckBox.forEach(p->Assert.assertFalse( p.isSelected() )); */
+
+
+    }
 }
