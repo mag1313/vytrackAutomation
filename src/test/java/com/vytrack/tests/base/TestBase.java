@@ -44,7 +44,7 @@ public abstract class TestBase {
                 {ConfigurationReader.getProperty("username1")},
                 {ConfigurationReader.getProperty("username2")},
                 {ConfigurationReader.getProperty("username3")},
-                {ConfigurationReader.getProperty("username4")},
+
         };
     }
 
@@ -52,8 +52,8 @@ public abstract class TestBase {
     @DataProvider(name="storeManagers")
     public Object[][] storeManagers(){
         return new Object[][]{
+                {ConfigurationReader.getProperty("username4")},
                 {ConfigurationReader.getProperty("username5")},
-                {ConfigurationReader.getProperty("username6")},
         };
     }
 
@@ -61,6 +61,7 @@ public abstract class TestBase {
     @DataProvider(name="salesManagers")
     public Object[][] salesManagers(){
         return new Object[][]{
+                {ConfigurationReader.getProperty("username6")},
                 {ConfigurationReader.getProperty("username7")},
                 {ConfigurationReader.getProperty("username8")},
         };
