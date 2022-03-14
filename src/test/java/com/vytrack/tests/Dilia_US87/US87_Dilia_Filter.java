@@ -1,5 +1,6 @@
-package com.vytrack.tests;
+package com.vytrack.tests.Dilia_US87;
 
+import com.vytrack.tests.base.TestBase;
 import com.vytrack.utilities.Driver;
 import com.vytrack.utilities.VyTrack_Utilities;
 import org.openqa.selenium.By;
@@ -14,7 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class US87_Dilia_Filter {
+public class US87_Dilia_Filter extends TestBase {
 
     @Test
     public void US87(){
