@@ -7,12 +7,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import org.testng.Assert;
+
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
 public class US87_Dilia_Filter extends TestBase {
@@ -39,8 +36,8 @@ public class US87_Dilia_Filter extends TestBase {
         actions.moveToElement(customersAccount).perform();
         customersAccount.click();
 
-        WebElement filterOption = Driver.getDriver().findElement(By.xpath("/html/body/div[2]/div[2]/div[1]/div[2]/div[3]/div[3]/div[2]/div[1]/div/div[3]/div[1]/div/a[1]"));
-
+        //WebElement filterOption = Driver.getDriver().findElement(By.xpath("/html/body/div[2]/div[2]/div[1]/div[2]/div[3]/div[3]/div[2]/div[1]/div/div[3]/div[1]/div/a[1]"));
+        WebElement filterOption = Driver.getDriver().findElement(By.xpath("//a[@href='#'][@title='Filters']"));
         filterOption.click();
 
         //Verify there are 8 filter options
@@ -56,7 +53,7 @@ public class US87_Dilia_Filter extends TestBase {
             System.out.println("Filters are not displayed please check code");
         }
 
-
+        //Done
     }
 }
 
