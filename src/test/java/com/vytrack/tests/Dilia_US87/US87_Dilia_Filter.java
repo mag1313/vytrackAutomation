@@ -36,6 +36,8 @@ public class US87_Dilia_Filter extends TestBase {
         actions.moveToElement(customersAccount).perform();
         customersAccount.click();
 
+
+        //click to filter button
         //WebElement filterOption = Driver.getDriver().findElement(By.xpath("/html/body/div[2]/div[2]/div[1]/div[2]/div[3]/div[3]/div[2]/div[1]/div/div[3]/div[1]/div/a[1]"));
         WebElement filterOption = Driver.getDriver().findElement(By.xpath("//a[@href='#'][@title='Filters']"));
         filterOption.click();
