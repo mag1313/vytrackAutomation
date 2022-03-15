@@ -65,6 +65,4 @@ public class VytrackUtils {
             e.printStackTrace();
         }
     }
-
-    }
-
+}
