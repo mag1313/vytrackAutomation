@@ -35,26 +35,23 @@ public class US87_Dilia_Filter extends TestBase {
 
 
             //click to filter button
-            //WebElement filterOption = Driver.getDriver().findElement(By.xpath("/html/body/div[2]/div[2]/div[1]/div[2]/div[3]/div[3]/div[2]/div[1]/div/div[3]/div[1]/div/a[1]"));
             WebElement filterOption = Driver.getDriver().findElement(By.xpath("//a[@href='#'][@title='Filters']"));
             filterOption.click();
 
             //Verify there are 8 filter options
-            String expectedPath = "/html/body/div[2]/div[2]/div[1]/div[2]/div[3]/div[3]/div[1]/div";
-            String actualPath = Driver.getDriver().getTitle();
+            String expectedPath = "Account Name, Contact Name, Contact Email, Contact Phone, Owner,  Business Unit, Created At, Updated At";
+            //String actualPath = Driver.getDriver().getText();
 
 
-            //WebElement actualPath = Driver.getDriver().findElement(By.xpath("/html/body/div[2]/div[2]/div[1]/div[2]/div[3]/div[3]/div[1]/div/span"));
-
-            if(expectedPath != actualPath){
+           // if(expectedPath != actualPath){
                 System.out.println("All filter are here");
-            }else{
+            //}else{
                 System.out.println("Filters are not displayed please check code");
             }
 
             //Done
         }
-    }
+
 
 
 
