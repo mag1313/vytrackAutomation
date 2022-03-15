@@ -9,9 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.w3c.dom.DocumentFragment;
+
 
 public class US_06_81_new extends TestBase {
 
