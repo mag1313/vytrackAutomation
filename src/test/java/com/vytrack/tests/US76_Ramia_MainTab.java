@@ -2,13 +2,9 @@ package com.vytrack.tests;
 
 import com.vytrack.tests.base.TestBase;
 import com.vytrack.utilities.Driver;
-import com.vytrack.utilities.VyTrack_Utilities;
-import org.apache.commons.logging.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;

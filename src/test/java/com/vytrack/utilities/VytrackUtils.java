@@ -1,12 +1,11 @@
 package com.vytrack.utilities;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class VyTrack_Utilities {
-
-
+public class VytrackUtils {
 
     public static void login(String username, String password) {
         //go to website
@@ -33,7 +32,7 @@ public class VyTrack_Utilities {
         Driver.getDriver().findElement(By.tagName("button")).click();
     }
 
-    public static void loginAsStoreManger() {
+    public static void loginAsStoreManager() {
         //go to website
         Driver.getDriver().get(ConfigurationReader.getProperty("env1"));
         // pass username
@@ -57,5 +56,13 @@ public class VyTrack_Utilities {
         Driver.getDriver().findElement(By.tagName("button")).click();
     }
 
-
+    public static void waitTillLoaderMaskDisappear() {
+        try {
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
+            WebElement loaderMask = Driver.getDriver().findElement(By.cssSelector("div[class='loader-mask shown']"));
+            wait.until(ExpectedConditions.invisibilityOf(loaderMask));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
