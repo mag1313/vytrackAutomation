@@ -67,4 +67,8 @@ public class Driver {
             driver = null;
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master
