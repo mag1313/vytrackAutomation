@@ -2,7 +2,7 @@ package com.vytrack.tests;
 
 import com.vytrack.tests.base.TestBase;
 import com.vytrack.utilities.Driver;
-import com.vytrack.utilities.VytrackUtils;
+import com.vytrack.utilities.VytrackUtilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -22,7 +22,7 @@ public class US87_Dilia_Filter extends TestBase {
         //Log in as store or sales managers
 
         //Account Name, Contact Name, Contact Email, Contact Phone, Owner,  Business Unit, Created At, Updated At
-        VytrackUtils.loginAsSalesManager();
+        VytrackUtilities.loginAsSalesManager();
 
         //Click the “Accounts” under the Customers
         WebElement customerTab = Driver.getDriver().findElement(By.xpath("(//span[@class='title title-level-1'])[3]"));
