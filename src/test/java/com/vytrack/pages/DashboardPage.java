@@ -6,14 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class DashboardPage {
-
-    public DashboardPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public DashboardPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    //page Header
+    // Page Header
     @FindBy(xpath = "(//h1)[2]")
     public WebElement pageHeader;
-
-
 }

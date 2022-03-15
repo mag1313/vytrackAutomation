@@ -8,47 +8,42 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class VytrackLoginPage {
+
     public VytrackLoginPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    //Login label
-    @FindBy(className = "title")
+    // Login Label
+    @FindBy(className="title")
     public WebElement loginLabel;
 
+    // Username
+    @FindBy(id="#prependedInput")
+    public WebElement userNameInput;
 
-
-    //username
-    @FindBy(id = "prependedInput")
-    public static WebElement userNameInput;
-
-
-    //password
+    // Password
     @FindBy(css = "input[id='prependedInput2']")
-        public static WebElement passwordInput;
+    public WebElement passwordInput;
 
-    //login button
-    @FindBy(xpath = "//button[@id='_submit']")
-    public static WebElement loginButton;
+    // Login Button
+    @FindBy(xpath="//button[@id='_submit']")
+    public WebElement loginButton;
 
-
-    //remember me test
-    @FindBy(xpath = "//span[.='Remember me on this computer']")
+    // Remember Me Text
+    @FindBy(xpath = "//span[.='Rememeber me on this computer']")
     public WebElement rememberMeText;
 
-
-    public static void gotoLoginPage(){
+    public void goToLoginPage(){
         Driver.getDriver().get(ConfigurationReader.getProperty("env1"));
     }
-    public static void login(String userName, String password){
-        gotoLoginPage();
-        userNameInput.sendKeys(userName);
+
+    public void login(String userName, String password){
+        goToLoginPage();
+        userNameInput.sendKeys();
         BrowserUtils.sleep(2);
         passwordInput.sendKeys(password);
         BrowserUtils.sleep(2);
         loginButton.click();
     }
-
-
-
 }
