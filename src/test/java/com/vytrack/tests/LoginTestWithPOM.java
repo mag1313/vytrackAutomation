@@ -13,9 +13,13 @@ import java.sql.Driver;
 
 public class LoginTestWithPOM extends TestBase {
 
+    VytrackLoginPage loginPage;
+    DashboardPage dashboardPage;
+
     @Test
     public void login_test() {
-        VytrackLoginPage loginPage = new VytrackLoginPage();
+
+         loginPage = new VytrackLoginPage();
 
         // Go to login page
         loginPage.goToLoginPage();
