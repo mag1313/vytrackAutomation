@@ -14,8 +14,7 @@ public class VyTrack_Utils {
 
     public static void login(){
         // Calling webElements from Login Page
-         loginPage = new LoginPage();
-
+        loginPage = new LoginPage();
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         //3. Enter valid username
         wait.until(ExpectedConditions.visibilityOf(loginPage.usernameInput));
@@ -38,7 +37,7 @@ public class VyTrack_Utils {
 
     public static void login(String username, String password){
         // Calling webElements from Login Page
-       loginPage = new LoginPage();
+        loginPage = new LoginPage();
 
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         //3. Enter valid username
