@@ -17,7 +17,7 @@ import java.util.List;
 public class US87_Dilia_Filter extends TestBase {
 
     @Test
-    public void US87() {
+    public void US87() { //done
 
         //Log in as store or sales managers
 
