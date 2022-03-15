@@ -1,4 +1,3 @@
-package com.vytrack.tests;
 
 import com.vytrack.utilities.Driver;
 import org.openqa.selenium.*;
@@ -119,3 +118,4 @@ public class US_06_81 {
 //*[@id="main-menu"]/ul/li[2]
 
 //div[@id]/ul/li[1]/a/span"
+
