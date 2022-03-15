@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WebTableUtils {
+
     /**
      * this method is using for finding vehicle model table headers
      *

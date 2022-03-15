@@ -5,10 +5,7 @@ import com.vytrack.utilities.Driver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 
-;
-
-public abstract class TestBase {
-
+public class TestBase {
     private static final String env = ConfigurationReader.getProperty("env1");
 
     // Data for different User Types
@@ -71,6 +68,5 @@ public abstract class TestBase {
     public void setUp() {
         Driver.getDriver().get(env);
     }
-
 
 }
