@@ -38,7 +38,7 @@ public class US89_Manage_filters extends TestBase {
         //Verify 6 options are checked by default
         List<WebElement> allOptions = Driver.getDriver().findElements(By.xpath("//div[@class='ui-multiselect-menu ui-corner-all select-filter-widget dropdown-menu']/ul/li/label/input"));
         for (WebElement option : allOptions) {
-            System.out.println("option.isSelected() = " + option.isSelected());
+            Assert.assertTrue(option.isSelected());
         }
 
         BrowserUtils.sleep(2);
@@ -53,11 +53,13 @@ public class US89_Manage_filters extends TestBase {
         WebElement option3 = Driver.getDriver().findElement(By.xpath("(//*[@title='Budget'])[3]"));
         option3.click();
 
+
         //Verify one or more options are unchecked
         List<WebElement> allOptions1 = Driver.getDriver().findElements(By.xpath("//div[@class='ui-multiselect-menu ui-corner-all select-filter-widget dropdown-menu']/ul/li/label/input"));
         for (WebElement uncheckOption : allOptions1) {
             System.out.println("uncheckOption.isSelected() = " + uncheckOption.isSelected());
         }
+
     }
 
 }
